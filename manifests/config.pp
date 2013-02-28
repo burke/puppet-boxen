@@ -10,7 +10,7 @@ class boxen::config {
   $repodir     = $::boxen_repodir
   $reponame    = $::boxen_reponame
   $socketdir   = "${datadir}/project-sockets"
-  $srcdir      = $::boxen_srcdir
+  $srcdir      = "${home}/Code/Ruby"
   $login       = $::github_login
 
   file { [$home,
