@@ -21,7 +21,7 @@
 #
 #     mysql =>
 #       If set to true, ensures mysql is installed and creates databases named
-#       "${name}_development" and "${name}_test".
+#       "${name}_dev" and "${name}_test".
 #       If set to any string or array value, creates those databases instead.
 #
 #     nginx =>
@@ -31,7 +31,7 @@
 #
 #     postgresql =>
 #       If set to true, ensures postgresql is installed and creates databases
-#       named "${name}_development" and "${name}_test".
+#       named "${name}_dev" and "${name}_test".
 #       If set to any string or array value, creates those databases instead.
 #
 #     redis =>
@@ -91,7 +91,7 @@ define boxen::project(
 
   if $mysql {
     $mysql_dbs = $mysql ? {
-      true    => ["${name}_development", "${name}_test"],
+      true    => ["${name}_dev", "${name}_test"],
       default => $mysql,
     }
 
@@ -123,7 +123,7 @@ define boxen::project(
 
   if $postgresql {
     $psql_dbs = $postgresql ? {
-      true    => ["${name}_development", "${name}_test"],
+      true    => ["${name}_dev", "${name}_test"],
       default => $postgresql,
     }
 
